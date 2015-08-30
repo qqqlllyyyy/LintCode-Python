@@ -21,3 +21,9 @@ class Solution:
         for i in range(n):
             A[m + i] = B[i];
         A.sort();
+
+    
+    """
+    Python lists have a built-in sort() method that modifies the list in-place
+    and a sorted() built-in function that builds a new sorted list from an iterable.
+    """
