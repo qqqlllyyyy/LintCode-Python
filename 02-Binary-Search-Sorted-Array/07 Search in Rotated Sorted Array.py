@@ -44,3 +44,15 @@ class Solution:
         if A[end] == target:
             return end
         return -1
+        
+    ## O(n) time complexity
+    def search(self, A, target):
+        
+        if (A == None) or (len(A) == 0):
+            return -1
+            
+        for i in range(len(A)):
+            if A[i] == target:
+                return i
+        
+        return -1
