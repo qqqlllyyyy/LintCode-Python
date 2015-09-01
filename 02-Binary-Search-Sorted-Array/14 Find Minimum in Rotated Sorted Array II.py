@@ -24,7 +24,9 @@ class Solution:
             mid = start + (end - start) / 2
             if num[mid] > num[end]:
                 start = mid
-            elif num[mid] < num[end]:
+            elif num[mid] < num[end]: ## Have to use 'elif' here, not 'if' !!
+                # Because you may change 'end' in the 2nd step and the changed
+                # 'end' will also go through step 3.
                 end = mid
             else:
                 end -= 1 #Only dare to move one step
