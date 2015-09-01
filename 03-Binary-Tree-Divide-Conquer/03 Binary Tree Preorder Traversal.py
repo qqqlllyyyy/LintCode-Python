@@ -53,3 +53,8 @@ class Solution:
     def traverse(self, root, result):
         if root == None:
             return
+        result.append(root.val)
+        if root.left:
+            self.traverse(root.left, result)
+        if root.right:
+            self.traverse(root.right, result)
