@@ -26,7 +26,7 @@ class Solution:
             jumps += 1
             farest = end
             for i in range(farest + 1):
-                if A[i] + i >= farest:
+                if A[i] + i >= farest:  # Not 'end' here
                     farest = A[i] + i
             start = end + 1 # It doesn't matter if "start = end" here
             end = farest
