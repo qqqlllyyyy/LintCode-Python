@@ -33,7 +33,7 @@ class Solution:
                 if cur.left is not None:
                     cur = cur.left
                 else:
-                    cur.left = node
+                    cur.left = node  # Can not use "node = cur.left"
                 
             if node.val > cur.val:
                 if cur.right is not None:
