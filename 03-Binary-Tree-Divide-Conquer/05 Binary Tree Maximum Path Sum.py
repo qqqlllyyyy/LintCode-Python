@@ -38,6 +38,6 @@ class Solution:
         left = self.maxPathHelper(root.left)
         right = self.maxPathHelper(root.right)
         maxpath = max(left[0], right[0], root.val + left[1] + right[1])
-        single = max(left[1] + root.val, right[1] + root.val, 0)
+        single = max(left[1] + root.val, right[1] + root.val, 0) # Don't forget 0 here !
         
         return maxpath, single
