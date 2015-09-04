@@ -43,7 +43,9 @@ class Solution:
                     result.append(cur.val)
                     stack.pop()
                     
-            elif prev == cur.left:
+            elif prev == cur.left:# Have to use "elif" here since prev may
+                # be "None" and cur.left may also be "None". Then this
+                # "if" and the previous "if" will both be executed.
                 if cur.right != None:
                     stack.append(cur.right)
                     
