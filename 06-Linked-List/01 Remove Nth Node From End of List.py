@@ -32,7 +32,7 @@ class Solution:
             return None
         
         dummy = ListNode(0)
-        dummy.next = head
+        dummy.next = head  # Don't forget this
         p1 = p2 = dummy
         for i in range(n):
             p1 = p1.next
