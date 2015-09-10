@@ -43,6 +43,7 @@ class Solution:
         if length == 0: return None
         if length == 1: return TreeNode(array[0])
         root = TreeNode(array[length / 2])
+         # Here is "root.left" not "left"
         root.left = self.sortedArrayToBST(array[ : length / 2])
         root.right = self.sortedArrayToBST(array[length / 2 + 1 : ])
         return root
