@@ -37,7 +37,7 @@ class Solution:
         left, right = leftDummy, rightDummy
         
         while head != None:
-            if head.val < x:
+            if head.val < x: # Not 'left.val < head.val'
                 left.next = head
                 left = head
             else:
