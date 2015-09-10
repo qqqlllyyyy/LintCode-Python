@@ -57,7 +57,7 @@ class Solution:
     def findMiddle(self, head):
         slow = head
         fast = head.next
-        while fast != None and fast.next != None:
+        while fast != None and fast.next != None: # Use "if" by mistake
             slow = slow.next
             fast = fast.next.next
         return slow
@@ -68,7 +68,6 @@ class Solution:
         if head == None or head.next == None:
             return 
         mid = self.findMiddle(head)
-        tail = self.reverse(mid.next)
+        tail = self.reverse(mid.next) # Note here is "mid.next", not "mid"!
         mid.next = None # Don't forget this step !!
         self.merge(head, tail)
-
