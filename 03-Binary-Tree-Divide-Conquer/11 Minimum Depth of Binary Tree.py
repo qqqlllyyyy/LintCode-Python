@@ -20,13 +20,18 @@ class Solution:
     @return: An integer
     """ 
     def minDepth(self, root):
-        # write your code here
+        # Pay attention to the meaning of "leaf node" here
+        
         if root == None:
             return 0
         
+        if root.left != None and root.right == None:
+            return self.minDepth(root.left) + 1
+        
         if root.left == None and root.right != None:
             return self.minDepth(root.right) + 1
-        if root.right == None and root.left != None:
-            return self.minDepth(root.left) + 1
-            
-        return min( self.minDepth(root.left), self.minDepth(root.right) ) + 1
+        
+        if root.left != None and root.right != None:
+            return min(self.minDepth(root.left), self.minDepth(root.right)) + 1
+        
+        return 1 # Don't forget this
