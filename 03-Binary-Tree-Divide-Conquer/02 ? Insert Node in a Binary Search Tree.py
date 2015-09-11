@@ -28,7 +28,7 @@ class Solution:
             return node
         
         cur = root
-        while cur != node:
+        while cur != node: # Attention: not "cur != None" !
             if node.val < cur.val:
                 if cur.left is not None:
                     cur = cur.left
@@ -41,5 +41,5 @@ class Solution:
                 else:
                     cur.right = node
                 
-        return root ## Can not return node, why ??
+        return roo
         ## How to do it with recursion? 
