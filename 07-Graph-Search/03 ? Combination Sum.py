@@ -34,6 +34,7 @@ class Solution:
             self.dfs(candidates, target - candidates[i], i, path + [candidates[i]])
             # Can not use "path.append(candidates[i])"
             # or path += [candidates[i]] here, why?
+            # Same problem for the question "Permutations".
     """
     Why this does't work?
     class Solution:
