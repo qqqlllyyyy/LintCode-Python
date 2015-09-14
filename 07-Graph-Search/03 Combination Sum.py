@@ -32,7 +32,8 @@ class Solution:
             if candidates[i] > target:
                 return
             self.dfs(candidates, target - candidates[i], i, path + [candidates[i]])
-        
+            # Can not use "path.append(candidates[i])"
+            # or path += [candidates[i]] here, why?
     """
     Why this does't work?
     class Solution:
