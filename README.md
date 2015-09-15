@@ -1,3 +1,3 @@
 # LintCode-with-Python
-My solution for LintCode questions in Python
+My solution for LintCode questions in Python.
 
