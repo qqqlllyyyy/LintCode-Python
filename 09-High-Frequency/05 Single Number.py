@@ -12,7 +12,7 @@
     0^0=0, 0^1=1, 1^0=1, 1^1=0
     Add a number twice from 0:
     0 ^0-> 0 ^0 ->0
-    0 ^1-> 1 ^0 ->0
+    0 ^1-> 1 ^1 ->0
     So the number left is the single number we want.
 """
 
