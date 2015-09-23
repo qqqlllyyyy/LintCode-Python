@@ -49,6 +49,6 @@ class Solution:
         minValue = min(dict[sumList[start]], dict[sumList[start + 1]])
         maxValue = max(dict[sumList[start]], dict[sumList[start + 1]])
         return minValue + 1, maxValue
-        # Don't forget "+1", either
+        # Don't forget "+1", either.
         
         
