@@ -25,7 +25,7 @@ class Solution:
             
             # For the following two steps, we can not change the order!
             # Because if we update "minSum" first, the result may be 0,
-            # which is sum minus itself. (nums = [-1])
+            # which is sum minus itself. (nums = [-1]).
             result = max(result, sum - minSum)
             minSum = min(sum, minSum)
             
