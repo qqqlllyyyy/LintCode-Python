@@ -25,5 +25,5 @@ class Solution:
     
     """
     Python lists have a built-in sort() method that modifies the list in-place
-    and a sorted() built-in function that builds a new sorted list from an iterable.
+    and a sorted() built-in function that builds a new sorted list from an iterable
     """
