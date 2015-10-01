@@ -22,8 +22,8 @@ class Solution:
     """
     def buildTree(self, preorder, inorder):
         if not inorder: return None # inorder is empty
-        root = TreeNode(preorder[0])
-        rootPos = inorder.index(preorder[0])
+        root = TreeNode(preorder[0]) # Note here we need 'TreeNode' to make root a TreeNode
+        rootPos = inorder.index(preorder[0]) # Can not use 'root' in the parenthesis since it's a TreeNode rather than a value
         root.left = self.buildTree(preorder[1 : 1 + rootPos], inorder[ : rootPos])
         root.right = self.buildTree(preorder[rootPos + 1 : ], inorder[rootPos + 1 : ])
         return root
