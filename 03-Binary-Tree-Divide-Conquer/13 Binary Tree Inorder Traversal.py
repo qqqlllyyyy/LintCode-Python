@@ -29,6 +29,8 @@ class Solution:
         cur = root
         while cur != None or len(stack) > 0:
             while cur != None:
+                # Can not use 'while node.left!=None: stack.append(node.left)'
+                # Since node will not be appended to the stack.
                 stack.append(cur)
                 cur = cur.left
             cur = stack.pop()
