@@ -35,6 +35,8 @@ class Solution:
             # 2. it's left child and right child are been put in "result"
             
             if prev == None or prev.left == cur or prev.right == cur:
+                # Can not change left-right order.
+                # We need to store left if it exists.
                 if cur.left != None:
                     stack.append(cur.left)
                 elif cur.right != None:
@@ -53,7 +55,7 @@ class Solution:
                 result.append(cur.val)
                 stack.pop()
                 
-            prev = cur
+            prev = cur # Don't forget this
             
         return result
             
