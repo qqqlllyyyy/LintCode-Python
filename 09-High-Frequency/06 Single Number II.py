@@ -7,7 +7,7 @@
 # Challenge
 # One-pass, constant extra space.
 #
-#
+
 class Solution:
     """
 	@param A : An integer array
