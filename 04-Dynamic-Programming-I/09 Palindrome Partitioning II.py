@@ -17,28 +17,24 @@ class Solution:
     # else minCut[i] = min( minCut[j]+1 && isPalindrome(i,j))
     
     def minCut(self, s):
-
-        # Build up a real value table to check whether a word is palindrome
-        isPalindrome=[]
-        for start in range(0, len(s)):
-            isPalindrome.append([])
-            
-        for length in range(0,len(s)):
-            for start in range(0, len(s)-length):
+        n = len(s)
+        isPalindrome = [[] for i in range(n)]
+        
+        for length in range(n):
+            for start in range(n - length):
                 if length == 0:
                     isPalindrome[start].append(True)
                 elif length == 1:
-                    isPalindrome[start].append(s[start]==s[start+1])
+                    isPalindrome[start].append(s[start] == s[start + 1])
                 else:
-                    isPalindrome[start].append(isPalindrome[start+1][length-2] and s[start]==s[start+length])
+                    isPalindrome[start].append(s[start] == s[start + length] and isPalindrome[start + 1][length - 2])
                     
-        minCut = []
-        for i in range(0, len(s)):
+        minCut = [float("infinity") for i in range(n)]
+        for i in range(n):
             if isPalindrome[0][i]:
-                minCut.append(0)
+                minCut[i] = 0
             else:
-                minCut.append(minCut[i-1]+1)
-            for j in range(0,i):
-                if isPalindrome[j+1][i-j-1]:
-                    minCut[i] = min(minCut[j]+1,minCut[i])
-        return minCut[len(s)-1]
+                for j in range(i):
+                    if isPalindrome[j + 1][i - j - 1]:
+                        minCut[i] = min(minCut[i], minCut[j] + 1)
+        return minCut[n - 1]
