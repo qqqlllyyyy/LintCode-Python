@@ -19,6 +19,7 @@ class Solution:
     @param p: A string includes "?" and "*"
     @return: A boolean
     """
+    # Note '?' can not match empty sequence!
     def isMatch(self, s, p):
         
         if (s == None and p != None) or (s != None and p == None):
