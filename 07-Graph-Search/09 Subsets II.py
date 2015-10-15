@@ -27,16 +27,17 @@ class Solution:
         if S == None or len(S) == 0:
             return self.result
         S.sort()
-        visited = [0 for i in range(len(S))]
-        self.dfs([], 0, visited, S)
+        self.dfs([], 0, S)
         return self.result
-    
-    def dfs(self, path, start, visited, S):
-        if path not in self.result:
-            self.result.append(path)
+        
+        
+    def dfs(self, path, start, S):
+        #if path not in self.result:
+        self.result.append(path)
+        
         for i in range(start, len(S)):
-            if visited[i] == 0:
-                visited[i] = 1
-                self.dfs(path + [S[i]], i + 1, visited, S)
-                visited[i] = 0
+            if i != start and S[i] == S[i - 1]: # Understand this!
+                continue
+            else:
+                self.dfs(path + [S[i]], i + 1, S)
         
