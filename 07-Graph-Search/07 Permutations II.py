@@ -43,5 +43,28 @@ class Solution:
                 visited[i] = 0
     
     # How to do this withour recursion?
+    
+    # Last one cannot pass Leetcode Judgement.
+    # This method is faster and don't use "if path not in self.result:":
+
+    def permuteUnique(self, nums):
+        self.result = []
+        if nums == None or len(nums) == 0:
+            return self.result
+        nums.sort()
+        visited = [0 for i in range(len(nums))]
+        self.dfs([], visited, nums)
+        return self.result
+        
+    def dfs(self, path, visited, nums):
+        if len(path) == len(nums):
+            self.result.append(path)
+            return 
+        for i in range(len(nums)):
+            if visited[i] == 1 or (i>0 and nums[i]==nums[i - 1] and visited[i - 1]==0):
+                continue
+            visited[i] = 1
+            self.dfs(path + [nums[i]], visited, nums)
+            visited[i] = 0
             
 
