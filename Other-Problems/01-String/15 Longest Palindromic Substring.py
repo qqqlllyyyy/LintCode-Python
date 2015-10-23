@@ -27,3 +27,5 @@ class Solution:
             len2 = len(self.getlongestpalindrome(s, i, i + 1))
             if len2 > len(palindrome): palindrome = self.getlongestpalindrome(s, i, i + 1)
         return palindrome
+        
+# O(n) method: http://articles.leetcode.com/2011/11/longest-palindromic-substring-part-ii.html
