@@ -38,3 +38,45 @@ class Solution:
                         k -= 1
         return result
                         
+                        
+# If we don't want to check "[numbers[i], numbers[j], numbers[k]] not in result":
+class Solution(object):
+    def threeSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        
+        nums.sort()
+        result = []
+        n = len(nums)
+        
+        for i in range(n - 2):
+            if i == 0 or nums[i] != nums[i - 1]:
+                
+                j, k = i + 1, n - 1
+                while j < k:
+                    sum = nums[i] + nums[j] + nums[k]
+                    if sum == 0:
+                        #and [nums[i], nums[j], nums[k]] not in result
+                        result.append([nums[i], nums[j], nums[k]])
+                        j = self.toNext(j, nums)
+                        k = self.toPrev(k, nums)
+                    elif sum < 0:
+                        j += 1
+                    else:
+                        k -= 1
+        
+        return result
+        
+    def toNext(self, j, nums):
+        i = j
+        while nums[i] == nums[j] and i < len(nums) - 1:
+            i += 1
+        return i
+        
+    def toPrev(self, k, nums):
+        i = k
+        while nums[i] == nums[k] and i > 0:
+            i -= 1
+        return i
